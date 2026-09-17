@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LeRobotStudio</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><strong>LeRobot<span>Studio</span></strong><button id="import">▣ 导入文件夹</button><b id="datasetName">数据质检</b><small id="progress">未导入数据</small></header>
+<div class="workspace">
+<aside><h3>Episodes <small id="count"></small></h3><input id="search" placeholder="搜索 ID / 任务描述"><select id="filter"><option value="all">全部数据</option><option value="pending">未标注</option><option value="done">已标注</option></select><div id="episodes"></div></aside>
+<main><div id="message" role="status">请选择数据集</div><section id="cameras" class="cameras"></section><section id="charts" class="charts"></section>
+<section class="transport"><button id="previous" title="上一帧 ←">❮</button><button id="play">▶ 播放</button><button id="next" title="下一帧 →">❯</button><select id="speed" aria-label="播放倍速"></select><input id="timeline" type="range" min="0" max="0" value="0" aria-label="帧时间轴"><input id="frame" type="number" min="0" value="0" aria-label="帧索引"><small id="time">—</small></section>
+<section class="annotation"><div><b>整条数据标注</b><small id="saved">未标注</small></div><div id="labels"></div><input id="note" maxlength="4000" placeholder="备注（选择“其他”时必填）"><button id="save" class="primary">保存标注</button></section>
+<footer>空格 播放 / 暂停 · ← → 逐帧 · 图中点击定位 · 滚轮缩放 · Shift + 拖动平移 · 双击恢复 · 帧索引从 0 开始</footer></main>
+</div>
+<dialog id="browser"><h3>导入服务器上的数据文件夹</h3><div class="pathbar"><input id="path" placeholder="数据集绝对路径"><button id="browse">浏览</button></div><small>选择包含 meta/info.json 的 LeRobot v3 文件夹</small><div id="folders"></div><div class="dialogActions"><button id="closeBrowser">取消</button><button id="open" class="primary">导入当前目录</button></div></dialog>
+<script src="/app.js"></script>
+</body></html>

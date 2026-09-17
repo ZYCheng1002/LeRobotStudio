@@ -1,0 +1,24 @@
+server:
+  host: 127.0.0.1
+  port: 8765
+dataset:
+  # 文件夹浏览器起始目录，也限定可导入的数据所在范围。
+  browse_root: /mnt/DATA/datasets/lerobot_datasets
+charts:
+  feature: observation.state
+  # 优先按名称前缀匹配；非标准名称可填 indices，例如 [0, 1, 2, 3, 4, 5]。
+  groups:
+    - title: 机械臂关节角度
+      prefix: arm.
+      indices: []
+    - title: 灵巧手关节角度
+      prefix: hand.
+      indices: []
+playback:
+  speeds: [1, 1.5, 2]
+  jpeg_quality: 85
+ui:
+  # 2～4；实际相机更多时自动扩展。
+  camera_slots: 4
+annotation:
+  labels: [建议合格, 建议删除, 犹豫, 抖动, 其他]
